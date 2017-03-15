@@ -6,7 +6,7 @@ Allows to add/remove columns on runtime without the need of reloading views/coll
 ## Install
 
 * Using NPM:
-`npm install dynamic-table`
+`npm install angular-dynamic-table`
 
 * Using Bower:
 `bower install dynamic-table`

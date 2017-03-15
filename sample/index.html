@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="alpez.sample" ng-controller="MainControler as ctrl">
+
+    <head>
+        <title>DynamicTable Sample</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="modules/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+
+        <style type="text/css">
+            [ng\:cloak], [ng-cloak], .ng-cloak {
+            display: none !important;
+            }
+        </style>
+    </head>
+
+
+    <body ng-cloak="" class="ng-cloak">
+        <div class="container">
+            <dynamic-table column-list="ctrl.tableSetup.columnList" content-list="ctrl.mockTableData"
+                   order-by="{{ctrl.tableSetup.orderBy}}" reverse-sort="ctrl.tableSetup.reverseSort"
+                   limit-width="0" option-glyphicon="glyphicon glyphicon-search" option-title="Details"
+                   on-header-click="ctrl.onHeaderClick(orderBy, reverseSort)" on-option-click="ctrl.onOptionClick(item, index)"
+                   on-column-list-change="ctrl.onColumnListChange(columnList)">
+            </dynamic-table>
+        </div>
+        
+        
+        <!--MODULES-->
+        <script src="modules/angular/angular.min.js"></script>
+        <script src="modules/ui-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="modules/dynamic-table/dynamic-table.min.js"></script>
+
+
+        <!--APP-->
+        <script src="app.js"></script>
+        <!--CONTROLLER-->
+        <script src="controller.js"></script>
+        <!--DATA-MODEL-->
+        <script src="model.js"></script>
+    </body>
+</html>

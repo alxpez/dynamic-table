@@ -9,22 +9,13 @@
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
 
-
 (function(){
     'user strict';
 
     /** 
-    * @param columnList: Array of objects with the following field structure.
+    * @param columnList: Array of objects with the following fields.
     *       - Mandatory fields -> {header: String, field: String, visible: Boolean}
-    *       - Optional/extra functionality fields -> {nestedField: String, isDateField:Boolean, sortableField:Boolean}
-    *
-    *    e.g. [
-    *           {header:"HEADER_1", field:"classField1", visible:false},
-    *           {header:"HEADER_2", field:"classField2", visible:true, nestedField:"classField2.nestedField2"},
-    *           {header:"HEADER_3", field:"classField3", visible:true, nestedField:"classField3.nestedField3", isDateField:true},
-    *           {header:"HEADER_3", field:"classField3", visible:true, nestedField:"classField3.nestedField3", isDateField:true, sortableField:false}
-    *           {...}
-    *         ]
+    *       - Optional fields -> {nestedField: String, isDateField:Boolean (default=false), sortableField:Boolean (Default=true)}
     */
     angular.module('alpez.dynamictable',[]).component('dynamicTable',{
         bindings:{

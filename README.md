@@ -1,7 +1,7 @@
 # dynamic-table
 
 Dynamic table component for [AngularJS](https://github.com/angular/angular.js) applications.
-Allows to add/remove columns on runtime without the need of reloading views/collections.
+It allows the addition/removal of columns on runtime without the need of reloading views/collections.
 
 ### Install
 

@@ -2,7 +2,7 @@
 <html ng-app="alpez.sample" ng-controller="MainControler as ctrl">
 
     <head>
-        <title>DynamicTable Sample</title>
+        <title>DynamicTable Demo</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link href="./modules/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
 
@@ -15,13 +15,50 @@
 
 
     <body ng-cloak="" class="ng-cloak">
+        <h1 class="text-center">dynamic-table demo</h1>
         <div class="container">
+            <br>
+            <br>
+            <form class="inline-form">
+
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <label >Add New Row</label>
+                        <div class="pull-right">
+                           <input type="button" class="btn btn-sm btn-warning" ng-click="ctrl.resetNewRow()" value="Reset" />
+                           <input type="submit" class="btn btn-sm btn-success" ng-click="ctrl.addRow()" value="Add" /> 
+                        </div>
+                    </div>               
+                    <div class="panel-body">
+                        <fieldset class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="Name" ng-model="ctrl.newRow.name" />
+                        </fieldset>
+                        <fieldset class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="Surname" ng-model="ctrl.newRow.surname" />
+                        </fieldset>
+                        <fieldset class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="City" ng-model="ctrl.newRow.city" />
+                        </fieldset>
+                        <fieldset class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="Company Name" ng-model="ctrl.newRow.company.name" />
+                        </fieldset>
+                        <fieldset class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="Est. Date" ng-model="ctrl.newRow.company.estDate" />
+                        </fieldset>
+                        <fieldset class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="workgroup" ng-model="ctrl.newRow.company.workgroup" />
+                        </fieldset>
+                    </div>
+                </div>
+            </form>
+            <br>
             <dynamic-table column-list="ctrl.tableSetup.columnList" content-list="ctrl.mockTableData"
                    order-by="{{ctrl.tableSetup.orderBy}}" reverse-sort="ctrl.tableSetup.reverseSort"
                    limit-width="0" option-glyphicon="glyphicon glyphicon-search" option-title="Details"
                    on-header-click="ctrl.onHeaderClick(orderBy, reverseSort)" on-option-click="ctrl.onOptionClick(item, index)"
                    on-column-list-change="ctrl.onColumnListChange(columnList)">
-            </dynamic-table>
+            </dynamic-table>  
         </div>
         
         

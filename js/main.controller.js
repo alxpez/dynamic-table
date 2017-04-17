@@ -8,6 +8,7 @@
 
         var ctrl = this;
 
+        ctrl.isFormOpen = false;
         ctrl.newRow = null;
         ctrl.mockTableData = null;
         ctrl.tableSetup = TableModel.dynamicTableSetup;

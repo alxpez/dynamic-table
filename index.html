@@ -20,17 +20,19 @@
             <br>
             <br>
             <form class="inline-form">
-
-
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
+                <div class="panel panel-primary" style="border-color: #bcbcbc;">
+                    <div class="panel-heading" style="border-color: #bcbcbc; background-color: #fff; color: black;">
+                        <a href="" ng-click="ctrl.isFormOpen = !ctrl.isFormOpen">
+                            <span ng-hide="ctrl.isFormOpen" class="glyphicon glyphicon-plus"></span>
+                            <span ng-hide="!ctrl.isFormOpen" class="glyphicon glyphicon-minus"></span>
+                        </a>
                         <label >Add New Row</label>
-                        <div class="pull-right">
+                        <div class="pull-right" ng-hide="!ctrl.isFormOpen">
                            <input type="button" class="btn btn-sm btn-warning" ng-click="ctrl.resetNewRow()" value="Reset" />
                            <input type="submit" class="btn btn-sm btn-success" ng-click="ctrl.addRow()" value="Add" /> 
                         </div>
                     </div>               
-                    <div class="panel-body">
+                    <div class="panel-body" ng-hide="!ctrl.isFormOpen">
                         <fieldset class="form-group col-md-4">
                             <input type="text" class="form-control" placeholder="Name" ng-model="ctrl.newRow.name" />
                         </fieldset>
@@ -53,12 +55,17 @@
                 </div>
             </form>
             <br>
-            <dynamic-table column-list="ctrl.tableSetup.columnList" content-list="ctrl.mockTableData"
-                   order-by="{{ctrl.tableSetup.orderBy}}" reverse-sort="ctrl.tableSetup.reverseSort"
-                   limit-width="0" option-glyphicon="glyphicon glyphicon-search" option-title="Details"
-                   on-header-click="ctrl.onHeaderClick(orderBy, reverseSort)" on-option-click="ctrl.onOptionClick(item, index)"
-                   on-column-list-change="ctrl.onColumnListChange(columnList)">
-            </dynamic-table>  
+
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <dynamic-table column-list="ctrl.tableSetup.columnList" content-list="ctrl.mockTableData"
+                           order-by="{{ctrl.tableSetup.orderBy}}" reverse-sort="ctrl.tableSetup.reverseSort"
+                           limit-width="0" option-glyphicon="glyphicon glyphicon-search" option-title="Details"
+                           on-header-click="ctrl.onHeaderClick(orderBy, reverseSort)" on-option-click="ctrl.onOptionClick(item, index)"
+                           on-column-list-change="ctrl.onColumnListChange(columnList)">
+                    </dynamic-table>  
+                </div>
+            </div>
         </div>
         
         

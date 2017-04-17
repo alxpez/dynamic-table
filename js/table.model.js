@@ -12,6 +12,7 @@
                 {header:"Family name", field:"surname", visible:true},
                 {header:"Hometown", field:"city", visible:true},
                 {header:"Company", field:"company", visible:true, nestedField:"company.name"},
+                {header:"Est.", field:"estDate", visible:false, nestedField:"company.estDate"},
                 {header:"Workgroup", field:"workgroup", visible:true, nestedField:"company.workgroup"},
                 {header:"Creation Date", field:"creationTS", visible:false, isDateField:true}
             ],

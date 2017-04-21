@@ -14,7 +14,7 @@ and add dynamic-table.js (or .min version) to your index.html
 
 ### Demo
 
-A demo application is available [here](https://al-pez.github.io/dynamic-table/). Feel free to play with it.
+A demo application is available [here](https://alxpez.github.io/dynamic-table/). Feel free to play with it.
     
 ### Dependencies
 

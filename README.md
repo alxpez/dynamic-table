@@ -7,17 +7,5 @@ It allows the addition/removal of columns on runtime without the need of reloadi
 
 ### Install
 
-Choose your flavour
-
-* `npm install angular-dynamic-table`
-* `bower install dynamic-table`
-    
-and add dynamic-table.js (or .min version) to your index.html
-
-### Dependencies
-
-Note that dynamic-table depends on the following modules and therefore these must be added to the project, as well as their corresponding `<script>`/`<link>` tags before `dynamic-table`'s one:
-
-* [AngularJS](https://angularjs.org/)
-* [UI Bootstrap](http://angular-ui.github.io/bootstrap/)
-* [Bootstrap](http://getbootstrap.com/) (CSS & fonts)
+- [Download](https://github.com/alxpez/dynamic-table/archive/gh-pages.zip) or Clone `git clone -b gh-pages https://github.com/alxpez/dynamic-table.git` and
+- Open index.html in your favourite web browser.

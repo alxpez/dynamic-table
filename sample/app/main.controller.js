@@ -8,9 +8,13 @@
 
         var ctrl = this;
 
+        ctrl.isFormOpen = false;
+        ctrl.newRow = null;
         ctrl.mockTableData = null;
         ctrl.tableSetup = TableModel.dynamicTableSetup;
 
+        ctrl.addRow = addRow;
+        ctrl.resetNewRow = resetNewRow;
         ctrl.onHeaderClick = onHeaderClick;
         ctrl.onColumnListChange = onColumnListChange;
         ctrl.onOptionClick = onOptionClick;
@@ -43,8 +47,33 @@
                     },
                     creationTS: 20141103152018
                 }];
+
+            resetNewRow();
         }
 
+
+        function addRow() {
+            ctrl.newRow.id = ctrl.mockTableData.length + 1;
+            ctrl.newRow.creationTS = new Date();
+            ctrl.mockTableData.push(ctrl.newRow);
+            resetNewRow();
+        }
+
+
+        function resetNewRow() {
+            ctrl.newRow = {
+                id: null,
+                name: '',
+                surname: '',
+                city: '',
+                company: {
+                    name: '',
+                    estDate: null,
+                    workgroup: ''
+                },
+                creationTS: null
+            };
+        }
 
         function onHeaderClick(orderBy, reverseSort){
             /*
@@ -52,6 +81,7 @@
                 execute a filter/order if all collection is on the client side, 
                 or GET request to backend (paginated collection for example)
             */
+            alert("orderBy: " + orderBy + "\nreverseSort: " + reverseSort);
         }
 
         function onColumnListChange(columnList){

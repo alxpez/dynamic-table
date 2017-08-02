@@ -2,11 +2,12 @@
   "name": "angular-dynamic-table",
   "version": "1.1.0",
   "description": "Dynamic table component for AngularJS applications",
-  "main": "dist/dynamic-table.js",
+  "main": "sample/server.js",
   "dependencies": {
     "angular": "^1.6.3",
+    "angular-ui-bootstrap": "^2.5.0",
     "bootstrap": "^3.3.7",
-    "angular-ui-bootstrap": "^2.5.0"
+    "express": "^4.15.3"
   },
   "devDependencies": {},
   "scripts": {

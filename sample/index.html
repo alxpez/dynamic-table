@@ -2,9 +2,9 @@
 <html ng-app="alpez.sample" ng-controller="MainControler as ctrl">
 
     <head>
-        <title>DynamicTable Sample</title>
+        <title>DynamicTable Demo</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link href="modules/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+        <link href="./modules/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
 
         <style type="text/css">
             [ng\:cloak], [ng-cloak], .ng-cloak {
@@ -15,27 +15,71 @@
 
 
     <body ng-cloak="" class="ng-cloak">
+        <h1 class="text-center">dynamic-table demo</h1>
         <div class="container">
-            <dynamic-table column-list="ctrl.tableSetup.columnList" content-list="ctrl.mockTableData"
-                   order-by="{{ctrl.tableSetup.orderBy}}" reverse-sort="ctrl.tableSetup.reverseSort"
-                   limit-width="0" option-glyphicon="glyphicon glyphicon-search" option-title="Details"
-                   on-header-click="ctrl.onHeaderClick(orderBy, reverseSort)" on-option-click="ctrl.onOptionClick(item, index)"
-                   on-column-list-change="ctrl.onColumnListChange(columnList)">
-            </dynamic-table>
+            <br>
+            <br>
+            <form class="inline-form">
+                <div class="panel panel-primary" style="border-color: #bcbcbc;">
+                    <div class="panel-heading" style="border-color: #bcbcbc; background-color: #fff; color: black;">
+                        <a href="" ng-click="ctrl.isFormOpen = !ctrl.isFormOpen">
+                            <span ng-hide="ctrl.isFormOpen" class="glyphicon glyphicon-plus"></span>
+                            <span ng-hide="!ctrl.isFormOpen" class="glyphicon glyphicon-minus"></span>
+                        </a>
+                        <label >Add New Row</label>
+                        <div class="pull-right" ng-hide="!ctrl.isFormOpen">
+                           <input type="button" class="btn btn-sm btn-warning" ng-click="ctrl.resetNewRow()" value="Reset" />
+                           <input type="submit" class="btn btn-sm btn-success" ng-click="ctrl.addRow()" value="Add" /> 
+                        </div>
+                    </div>               
+                    <div class="panel-body" ng-hide="!ctrl.isFormOpen">
+                        <fieldset class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="Name" ng-model="ctrl.newRow.name" />
+                        </fieldset>
+                        <fieldset class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="Surname" ng-model="ctrl.newRow.surname" />
+                        </fieldset>
+                        <fieldset class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="City" ng-model="ctrl.newRow.city" />
+                        </fieldset>
+                        <fieldset class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="Company Name" ng-model="ctrl.newRow.company.name" />
+                        </fieldset>
+                        <fieldset class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="Est. Date" ng-model="ctrl.newRow.company.estDate" />
+                        </fieldset>
+                        <fieldset class="form-group col-md-4">
+                            <input type="text" class="form-control" placeholder="workgroup" ng-model="ctrl.newRow.company.workgroup" />
+                        </fieldset>
+                    </div>
+                </div>
+            </form>
+            <br>
+
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <dynamic-table column-list="ctrl.tableSetup.columnList" content-list="ctrl.mockTableData"
+                           order-by="{{ctrl.tableSetup.orderBy}}" reverse-sort="ctrl.tableSetup.reverseSort"
+                           limit-width="0" option-glyphicon="glyphicon glyphicon-search" option-title="Details"
+                           on-header-click="ctrl.onHeaderClick(orderBy, reverseSort)" on-option-click="ctrl.onOptionClick(item, index)"
+                           on-column-list-change="ctrl.onColumnListChange(columnList)">
+                    </dynamic-table>  
+                </div>
+            </div>
         </div>
         
         
         <!--MODULES-->
-        <script src="modules/angular/angular.min.js"></script>
-        <script src="modules/ui-bootstrap/ui-bootstrap-tpls.js"></script>
-        <script src="modules/dynamic-table/dynamic-table.min.js"></script>
+        <script src="./modules/angular/angular.min.js"></script>
+        <script src="./modules/ui-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="./modules/dynamic-table/dynamic-table.min.js"></script>
 
 
         <!--APP-->
-        <script src="app.js"></script>
+        <script src="./app/app.js"></script>
         <!--CONTROLLER-->
-        <script src="main.controller.js"></script>
+        <script src="./app/main.controller.js"></script>
         <!--DATA-MODEL-->
-        <script src="table.model.js"></script>
+        <script src="./app/table.model.js"></script>
     </body>
 </html>

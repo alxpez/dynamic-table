@@ -15,6 +15,8 @@ and add dynamic-table.js (or .min version) to your index.html
 ### Demo
 
 A demo application is available [here](https://alxpez.github.io/dynamic-table/). Feel free to play with it.
+
+Alternatively you can clone or [download](https://github.com/alxpez/dynamic-table/archive/master.zip) this repository and run `npm start` in the project folder. This will start a node server reachable at `localhost:3000`.
     
 ### Dependencies
 
